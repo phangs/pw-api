@@ -1,0 +1,200 @@
+<h4>Get All Banks for Offline Deposit/Withdrawal</h4>
+
+<br>
+
+<p>This endpoint allows retrieval of banks that could be used for offline deposit and withdrawal transactions.</p>
+
+<div id="accordion">
+
+    <div class="card">
+        <div class="card-header" id="basicinfohead">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#basicinfo" aria-expanded="true" aria-controls="basicinfo">
+      Basic Information
+      </button>
+            </h5>
+        </div>
+        <div id="basicinfo" class="collapse show" aria-labelledby="basicinfohead" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr class="bg-light">
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Status</th>
+                            <td class="text-success">Active</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Enpoint URI</th>
+                            <td>api/Common/Banks</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Method</th>
+                            <td>GET</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">URI Parameters</th>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Body Parameters</th>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Request Format</th>
+                            <td>JSON</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Response Format</th>
+                            <td>JSON</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="sampreshead">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#sampres" aria-expanded="true" aria-controls="sampres">API Explorer</button>
+            </h5>
+        </div>
+        <div id="sampres" class="collapse" aria-labelledby="sampreshead" data-parent="#accordion">
+            <div class="card-body">
+                <button id="tryme" type="button" class="btn btn-success float-sm-right">Try Me</button>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="httprequest"><h5>Request</h5></label>
+                            <pre readonly class="form-control pre-scrollable" id="httprequest" rows="4"></pre>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="httpresult"><h5>Result</h5></label>
+                            <pre readonly class="form-control pre-scrollable" id="httpresult" rows="4"></pre>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="resdethead">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#resdet" aria-expanded="true" aria-controls="resdet">
+      Result Details
+      </button>
+            </h5>
+        </div>
+        <div id="resdet" class="collapse" aria-labelledby="resdethead" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Sample</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Id</th>
+                            <td>integer</td>
+                            <td>Unique internal Id of the bank</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">BankName</th>
+                            <td>string</td>
+                            <td>Name of the bank</td>
+                            <td>Kasikorn Bank</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">BankCode</th>
+                            <td>string</td>
+                            <td>Code assigned to the bank</td>
+                            <td>KB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">BankUrl</th>
+                            <td>string</td>
+                            <td>URL address of the image of the bank's logo</td>
+                            <td><pre>https://www.kasikornbank.com/SiteCollectionDocuments/assets/img/logo/kasikornbank.png</pre></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Currency</th>
+                            <td>object</td>
+                            <td>Array of currencies supported by that bank</td>
+                            <td><pre>[
+   {
+    "CurrencyCode": "THB"
+   }
+]</pre></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-danger" id="stathead">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-white" data-toggle="collapse" data-target="#staterror" aria-expanded="true" aria-controls="staterror">
+      Status and Error Codes
+      </button>
+            </h5>
+        </div>
+        <div id="staterror" class="collapse" aria-labelledby="stathead" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Resolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">200</th>
+                            <td>Success</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">500</th>
+                            <td>Internal Server Error</td>
+                            <td>Verify that you are using the correct Client Key and Secret Key</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">401</th>
+                            <td>Unauthorized</td>
+                            <td>
+                                Check if you're HTTP request header is passed correctly, could be:
+                                <ul>
+                                    <li>Missing Client Key</li>
+                                    <li>Missing Secret Key</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">404</th>
+                            <td>Not found</td>
+                            <td>Contact Customer/Tech Support</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/getbanksall.js"></script>

@@ -1,0 +1,54 @@
+<h4>Security</h4>
+
+<br>
+
+<p class="lead"><strong>PayWalo Payment Services</strong> implements several security measures to keep the security and confidentiality of your data. Only the eyes of the intended audience shall ever see your records.</p>
+
+<div id="accordion">
+
+    <div class="card">
+        <div class="card-header" id="httpshead">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#httphttps" aria-expanded="true" aria-controls="httphttps">Secured HTTP protocol</button>
+            </h5>
+        </div>
+        <div id="httphttps" class="collapse show" aria-labelledby="httpshead" data-parent="#accordion">
+            <div class="card-body">
+                <p>Aside from the current HTTP protocol, HTTPS has been enabled to provide a more secured connection between servers. Customers may opt to use either HTTP or HTTPS.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="whitelisthead">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#whitelist" aria-expanded="false" aria-controls="whitelist"><del>IP Whitelisting</del><small class="bg-danger text-white">Disabled</small></button>
+            </h5>
+        </div>
+        <div id="whitelist" class="collapse" aria-labelledby="whitelisthead" data-parent="#accordion">
+            <div class="card-body">
+                <p><del>IP whitelisting is also enabled to prevent unauthorixzed connection to the <strong>PayWalo Payment Server</strong>. This prevents connections other the authorized partners.</del></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="hmachead">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#hmac" aria-expanded="false" aria-controls="hmac">HMAC/SHA256</button>
+            </h5>
+        </div>
+        <div id="hmac" class="collapse" aria-labelledby="hmachead" data-parent="#accordion">
+            <div class="card-body">
+                <p>Employing this encryption, partner merchants may opt to have this enabled on their account to safely send and receive HTTP/S communication. This ensures that data received to and from our servers are verified.</p>
+                <div class="bd-example">
+                    <details>
+                        <summary>Note:</summary>
+                        <p><i>Implementation of this encryption is more described in each method.</i></p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

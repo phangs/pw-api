@@ -1,0 +1,317 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="content">
+      <h4>
+        Offline Deposit (Version 1)
+      </h4>
+      <p>
+      <p>
+        This endpoint is used for sending an offline deposit request from the merchant system to the PayWalo server.
+      </p>
+      <p>
+        With this deposit option, human intervention, payment processors verifies and approves the deposit requests manually.  This means that soon as a deposit request is received, payment processors will check with the bank if the deposit has been credited.
+      </p>
+      <p>
+        Using various approach, they will identify the PayWalo deposit with the matching bank deposit record.  Such approach includes but not limited to, <abbr title="Unique Deposit Amount">UDA</abbr>, player's name (if sent by the merchant system), player's username (if sent by the merchant system), amount, etc.
+      </p>
+
+
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="basicinfohead">
+            <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#basicinfo" aria-expanded="true" aria-controls="basicinfo">
+            Basic Information
+            </button>
+            </h5>
+          </div>
+          <div id="basicinfo" class="collapse show" aria-labelledby="basicinfohead" data-parent="#accordion">
+            <div class="card-body">
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr class="bg-light">
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Status</td>
+                    <td class="text-success">Active</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Enpoint URI</td>
+                    <td>api/Payment/Deposit</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Method</td>
+                    <td>POST</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">URI Parameters</td>
+                    <td>None</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Body Parameters</td>
+                    <td>
+                      <div id="accbodyparam">
+                        <div class="card">
+                          <div class="card-header" id="bodyparamhead">
+                            <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#bodyparam" aria-expanded="true" aria-controls="bodyparam">
+                            View
+                            </button>
+                            </h5>
+                          </div>
+                          <div id="bodyparam" class="collapse" aria-labelledby="bodyparamhead" data-parent="#accbodyparam">
+                            <div class="card-body">
+                              <table class="table table-sm table-hover">
+                                <thead class="bg-success text-white">
+                                  <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Sample</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">Amount</td>
+                                    <td>decimal</td>
+                                    <td>Amount of the transaction</td>
+                                    <td>10.05</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">OrderDate</td>
+                                    <td>datetime</td>
+                                    <td>Date and time of the transaction</td>
+                                    <td>2018-01-23T23:15:11.8090369+08:00</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">OrderNumber</td>
+                                    <td>string</td>
+                                    <td>Unique reference number assigned to the transaciton in your system</td>
+                                    <td>ON-201801231123</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">BankId</td>
+                                    <td>integer</td>
+                                    <td>Bank identifier in the PayWalo System. You can get the list using the endpoint api/Common/DepositBanks</td>
+                                    <td>16</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Currency</td>
+                                    <td>string</td>
+                                    <td>Currency [code] of the transaction</td>
+                                    <td>CNY</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">CallbackUrl</td>
+                                    <td>string</td>
+                                    <td>Address where PayWalo system will post the status update of the transaction once approved or cancelled</td>
+                                    <td>CNY</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Notes</td>
+                                    <td>string</td>
+                                    <td>Additional information if needed.  This should be in JSON format e.g. {username:'wpineda',language:'en'}</td>
+                                    <td>CNY</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Sign</td>
+                                    <td>string</td>
+                                    <td>Computed hash for the transaction.  If this did not matched with PayWalo system, the record will be rejected</td>
+                                    <td>[SIGN]</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Request Format</td>
+                    <td>JSON</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Response Format</td>
+                    <td>JSON</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="diagramhead">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#diagram" aria-expanded="true" aria-controls="diagram">
+            Basic Flow
+            </button>
+            </h5>
+          </div>
+          <div id="diagram" class="collapse" aria-labelledby="diagramhead" data-parent="#accordion">
+            <div class="card-body">
+              <figure class="figure">
+                <img src="images/diagrams/offline-deposit.png" class="figure-img img-fluid rounded" alt="Offline Deposit">
+                <figcaption class="figure-caption text-center">Offline Deposit Process Flow</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="sampreshead">
+            <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#sampres" aria-expanded="true" aria-controls="sampres">
+            API Explorer
+            </button>
+            </h5>
+          </div>
+          <div id="sampres" class="collapse" aria-labelledby="sampreshead" data-parent="#accordion">
+            <div class="card-body">
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                    <label for="reqAmount">Amount</label>
+                    <input id="reqAmount" type="number" class="form-control" placeholder="10.90" value="10.90">
+                  </div>
+                  <div class="col">
+                    <label for="reqCurrency">Currency Code</label>
+                    <input id="reqCurrency" type="text" class="form-control" placeholder="CNY" value="MYR">
+                  </div>
+                  <div class="col">
+                    <label for="reqOrderDate">Order Date</label>
+                    <input id="reqOrderDate" type="text" class="form-control" placeholder="2018-01-23T23:15:11.8090369+08:00">
+                  </div>
+                  <div class="col">
+                    <label for="reqOrderNumber">Order Number</label>
+                    <input id="reqOrderNumber" type="text" class="form-control" placeholder="API-0000001" value="API-0000001">
+                  </div>
+                  <div class="col">
+                    <label for="reqBankId">Bank ID</label>
+                    <input id="reqBankId" type="integer" class="form-control" placeholder="16" value="16">
+                  </div>
+                </div>
+                <br>
+                <div class="form-row">
+                  <div class="col">
+                    <label for="reqCallbackUrl">Callback URL</label>
+                    <input id="reqCallbackUrl" type="text" class="form-control" placeholder="https://hookb.in/ZRQnnxxw" value="https://hookb.in/ZRQnnxxw">
+                  </div>
+                  <div class="col">
+                    <label for="reqNotes">Notes</label>
+                    <input id="reqNotes" type="text" class="form-control" placeholder="Notes" value="{username:'wpineda',language:'en'}">
+                  </div>
+                  <div class="col">
+                    <label for="reqSign">Sign</label>
+                    <input id="reqSign" type="text" class="form-control" placeholder="Sign">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card-body">
+              <button id="tryme" type="button" class="btn btn-success float-sm-right">Try Me</button>
+            </div>
+            <br>
+            <div class="card-body">
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="httprequest"><h5>Request</h5></label>
+                  <pre readonly class="form-control pre-scrollable" id="httprequest" rows="4"></pre>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="httpresult"><h5>Result</h5></label>
+                <pre readonly class="form-control pre-scrollable" id="httpresult" rows="4"></pre>
+              </div>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="resdethead">
+            <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#resdet" aria-expanded="true" aria-controls="resdet">
+            Result Details
+            </button>
+            </h5>
+          </div>
+          <div id="resdet" class="collapse" aria-labelledby="resdethead" data-parent="#accordion">
+            <div class="card-body">
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Sample</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">PaymentMethodCode</td>
+                    <td>string</td>
+                    <td>Code assigned to the payment method</td>
+                    <td>WLKN</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">PaymentMethodName</td>
+                    <td>string</td>
+                    <td>Name assigned to the payment method</td>
+                    <td>Walk-in</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header bg-danger" id="stathead">
+            <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#staterror" aria-expanded="true" aria-controls="staterror">
+            Status and Error Codes
+            </button>
+            </h5>
+          </div>
+          <div id="staterror" class="collapse" aria-labelledby="stathead" data-parent="#accordion">
+            <div class="card-body">
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Resolution</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">500</td>
+                    <td>Internal Server Error</td>
+                    <td>Verify that you are using the correct Client and Secret Keys</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">401</td>
+                    <td>Unauthorized</td>
+                    <td>
+                      Check if you're HTTP request header is passed correctly.  Could be:
+                      <ul>
+                        <li>Missing Client Key</li>
+                        <li>Missing Secret Key</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/offlinedepositv1.js"></script>
+  </body>
+</html>

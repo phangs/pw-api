@@ -1,0 +1,137 @@
+<!-- views/partials/header.ejs -->
+
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+
+    <!-- <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <span class="glyphicon glyphicon-cd"></span>
+            PayWalo
+        </a>
+
+        <ul class="nav navbar-nav">
+            <li><a href="/">General</a></li>
+            <li><a href="/about">Common</a></li>
+            <li><a href="/about">Offline Options</a></li>
+            <li><a href="/about">Online Options</a></li>
+            <li><a href="/about">Apendix</a></li>
+        </ul>
+    </div> -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+                    <a class="navbar-brand" href="http://www.paywalo.com">PayWalo</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbargeneral" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    General
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbargeneral">
+                                    <a id="navintro" class="dropdown-item" href="#">Introduction</a>
+                                    <a id="navsec" class="dropdown-item" href="#">Security</a>
+                                    <a id="navchklist" class="dropdown-item" href="#">Integration Checklist</a>
+                                    <a id="navhttp" class="dropdown-item" href="#">Standard HTTP Headers</a>
+                                    <a id="navhilevel" class="dropdown-item" href="#">High Level Flow</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarcommon" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Common Methods
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarcommon">
+                                    <h6 class="dropdown-header bg-success text-white">Payment Methods</h6>
+                                    <a id="navpmethod" class="dropdown-item" href="#">Get Payment Methods</a>
+                                    <h6 class="dropdown-header bg-success text-white">Banks for Offline Banking</h6>
+                                    <a id="navbankaccounts" class="dropdown-item" href="#"><del>Get Bank Accounts<del></a>
+                                    <a id="navbanksall" class="dropdown-item" href="#">Get Banks - All</a>
+                                    <a id="navbanksdep" class="dropdown-item" href="#">Get Banks - Deposit</a>
+                                    <a id="navbankswithd" class="dropdown-item" href="#">Get Banks - Withdrawal</a>
+                                    <!-- <a id="navtogether" class="dropdown-item" href="#">Use Cases</a> -->
+                                    <h6 class="dropdown-header bg-success text-white">Banks for Online Banking</h6>
+                                    <a id="navonlinebanks" class="dropdown-item" href="#">Get Online Bank Codes</a>
+                                    <h6 class="dropdown-header bg-success text-white">Check Transaction Status</h6>
+                                    <a id="navchkdeposit" class="dropdown-item" href="#">Deposit</a>
+                                    <a id="navchkwithdrawal" class="dropdown-item" href="#">Withdrawal</a>
+                                    <h6 class="dropdown-header bg-success text-white">HMAC/SHA256</h6>
+                                    <a id="navhmac" class="dropdown-item" href="#">Implementation</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarofflineoptions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Offline Options
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarofflineoptions">
+                                    <h6 class="dropdown-header bg-success text-white">Deposit</h6>
+                                    <a id="navoffdepv1" class="dropdown-item" href="#">Deposit Request version 1</a>
+                                    <a class="dropdown-item" href="#">Deposit Request version 2</a>
+                                    <a class="dropdown-item" href="#"><del>Upload Deposit Slip ver. 1</del></a>
+                                    <a class="dropdown-item" href="#">Upload Deposit Slip ver. 2</a>
+                                    <h6 class="dropdown-header bg-success text-white">Withdrawal</h6>
+                                    <a class="dropdown-item" href="#">Withdrawal Request</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbaronlineoptions" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Online Options
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbaronlineoptions">
+                                    <h6 class="dropdown-header bg-success text-white">Banking</h6>
+                                    <a class="dropdown-item" href="#">Online Deposit</a>
+                                    <a class="dropdown-item" href="#">Online Withdrawal</a>
+                                    <h6 class="dropdown-header bg-success text-white">Micro Payments</h6>
+                                    <a class="dropdown-item" href="#">WeChat Pay</a>
+                                    <a class="dropdown-item" href="#">QQ Pay</a>
+                                    <a class="dropdown-item" href="#">Alipay</a>
+                                    <h6 class="dropdown-header bg-success text-white">Other</h6>
+                                    <a class="dropdown-item" href="#">LinePay Deposit</a>
+                                    <a class="dropdown-item" href="#">LinePay Withdrawal</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">WeChat Offline Deposit</a>
+                                    <a class="dropdown-item" href="#">WeChat Offline Withdrawal</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">QQ Pay Offline Deposit</a>
+                                    <a class="dropdown-item" href="#">QQ Pay Offline Withdrawal</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Venus Point</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarApendix" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Apendix
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarApendix">
+                                    <a id="navapppmethods" class="dropdown-item" href="#">Payment Methods</a>
+                                    <a id="navappcurrencies" class="dropdown-item" href="#">Currencies</a>
+                                    <a id="navappbankcodes" class="dropdown-item" href="#">Online Bank Codes</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="dropdown mr-sm-2">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbaruser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <%= user.username %>
+                            </a>
+                            <div id="user" class="dropdown-menu" aria-labelledby="navbaruser">
+                                <!-- <a id="navuserprofile" class="dropdown-item" href="/profile">Profile</a> -->
+                                <a id="navusergotobo" class="dropdown-item" href="http://bo.paywalo.com" target="_blank">Back Office</a>
+                                <a id="navlogout" class="dropdown-item" href="/logout">Logout</a>
+                            </div>
+                        </div>
+                            
+                         <!-- <p class="text-white">Hello,<a href="/profile" class="text-white"> <%= user.username %></a></p>
+                         <p><a href="/logout"> Log out</a></p> -->
+
+
+                        <!-- <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form> -->
+                    </div>
+                </nav>
+
+</div>
+</nav>

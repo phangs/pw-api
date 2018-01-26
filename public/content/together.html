@@ -1,0 +1,178 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="content">
+
+      <h4>
+      Putting it together
+      </h4>
+      <p>
+        <p>
+          Now that you are able to consume the APIs, all that you need to know is how to use them to make an offline deposit request.
+        </p>
+        <p>
+          Below is a diagram of how the process will flow
+        </p>
+
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="sdhead">
+            <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#sdiagram" aria-expanded="true" aria-controls="sdiagram">
+            Sequence Diagram
+            </button>
+            </h5>
+          </div>
+          <div id="sdiagram" class="collapse show" aria-labelledby="sdhead" data-parent="#accordion">
+            <div class="card-body">
+              <figure class="figure">
+                <img src="images/diagrams/offline-deposit.png" class="figure-img img-fluid rounded" alt="Offline Deposit">
+                <figcaption class="figure-caption text-center">Offline Deposit Process Flow</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+<!--         <div class="card">
+          <div class="card-header" id="sampreqhead">
+            <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#sampreq" aria-expanded="true" aria-controls="collapseOne">
+            Sample Request
+            </button>
+            </h5>
+          </div>
+          <div id="sampreq" class="collapse" aria-labelledby="sampreqhead" data-parent="#accordion">
+            <div class="card-body">
+              content
+            </div>
+          </div>
+        </div> -->
+        <div class="card">
+          <div class="card-header" id="sampreshead">
+            <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#sampres" aria-expanded="true" aria-controls="sampres">
+            API Explorer<button id="tryme" type="button" class="btn btn-success float-sm-right">Try Me</button>
+            </button>
+            </h5>
+          </div>
+          <div id="sampres" class="collapse" aria-labelledby="sampreshead" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row">
+                <div class="dropdown show mx-sm-3 mb-2">
+          <a class="btn btn-secondary dropdown-toggle bg-success" href="#" role="button" id="Country" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            - -
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a id="THB" class="dropdown-item chcountry" href="#">Thailand</a>
+            <a id="IDR" class="dropdown-item chcountry" href="#">Indonesia</a>
+            <a id="VND" class="dropdown-item chcountry" href="#">Vietnam</a>
+            <a id="MYR" class="dropdown-item chcountry" href="#">Malaysia</a>
+            <a id="KRW" class="dropdown-item chcountry" href="#">South Korea</a>
+            <a id="USD" class="dropdown-item chcountry" href="#">United States</a>
+            <a id="KHR" class="dropdown-item chcountry" href="#">Cambodia</a>
+            <a id="JPY" class="dropdown-item chcountry" href="#">Japan</a>
+            <a id="CNY" class="dropdown-item chcountry" href="#">China</a>
+            <a id="IRL" class="dropdown-item chcountry" href="#">Ireland</a>
+            <a id="HKD" class="dropdown-item chcountry" href="#">Hongkong</a>
+            <a id="SGD" class="dropdown-item chcountry" href="#">Singapore</a>
+            <a id="TWD" class="dropdown-item chcountry" href="#">Taiwan</a>
+          </div>
+        </div>
+              </div>
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="httprequest"><h5>Request</h5></label>
+                  <pre readonly class="form-control pre-scrollable" id="httprequest" rows="4"></pre>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="httpresult"><h5>Result</h5></label>
+                <pre readonly class="form-control pre-scrollable" id="httpresult" rows="4"></pre>
+              </div>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="resdethead">
+            <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#resdet" aria-expanded="true" aria-controls="resdet">
+            Result Details
+            </button>
+            </h5>
+          </div>
+          <div id="resdet" class="collapse" aria-labelledby="resdethead" data-parent="#accordion">
+            <div class="card-body">
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Sample</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">PaymentMethodCode</td>
+                    <td>string</td>
+                    <td>Code assigned to the payment method</td>
+                    <td>WLKN</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">PaymentMethodName</td>
+                    <td>string</td>
+                    <td>Name assigned to the payment method</td>
+                    <td>Walk-in</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header bg-danger" id="stathead">
+            <h5 class="mb-0">
+            <button class="btn btn-link text-white" data-toggle="collapse" data-target="#staterror" aria-expanded="true" aria-controls="staterror">
+            Status and Error Codes
+            </button>
+            </h5>
+          </div>
+          <div id="staterror" class="collapse" aria-labelledby="stathead" data-parent="#accordion">
+            <div class="card-body">
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Resolution</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">500</td>
+                    <td>Internal Server Error</td>
+                    <td>Verify that you are using the correct Client Key and Secret Key</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">401</td>
+                    <td>Unauthorized</td>
+                    <td>
+                      Check if you're HTTP request header is passed correctly, could be:
+                      <ul>
+                        <li>Missing Client Key</li>
+                        <li>Missing Secret Key</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/together.js"></script>
+  </body>
+</html>

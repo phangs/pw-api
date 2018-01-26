@@ -1,0 +1,172 @@
+<h4>Check Deposit Transaction Status</h4>
+<br>
+<p>This endpoint allows the merchant partnet to check the status of his deposit transaction.</p>
+
+<div id="accordion">
+    <div class="card">
+        <div class="card-header" id="basicinfohead">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#basicinfo" aria-expanded="true" aria-controls="basicinfo">
+            Basic Information
+            </button>
+            </h5>
+        </div>
+        <div id="basicinfo" class="collapse show" aria-labelledby="basicinfohead" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr class="bg-light">
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Status</th>
+                            <td class="text-success">Active</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Enpoint URI</th>
+                            <td>api/Common/DepositBanks</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Method</th>
+                            <td>GET</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">URI Parameters</th>
+                            <td>Country</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Body Parameters</th>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Request Format</th>
+                            <td>JSON</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Response Format</th>
+                            <td>JSON</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="sampreshead">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#sampres" aria-expanded="true" aria-controls="sampres">
+            API Explorer
+            </button>
+            </h5>
+        </div>
+        <div id="sampres" class="collapse" aria-labelledby="sampreshead" data-parent="#accordion">
+            <div class="card-body">
+                <button id="tryme" type="button" class="btn btn-success float-sm-right">Try Me</button>
+                <form>
+                    <div class="form-group row">
+                        <label for="transno" class="col-sm-2 col-form-label">Transaction Number</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control-plaintext" id="transno" placeholder="Input Transaction Number">
+                        </div>
+                    </div>
+                </form>
+
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="httprequest"><h5>Request</h5></label>
+                            <pre readonly class="form-control pre-scrollable" id="httprequest" rows="4"></pre>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="httpresult"><h5>Result</h5></label>
+                            <pre readonly class="form-control pre-scrollable" id="httpresult" rows="4"></pre>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="resdethead">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#resdet" aria-expanded="true" aria-controls="resdet">
+            Result Details
+            </button>
+            </h5>
+        </div>
+        <div id="resdet" class="collapse" aria-labelledby="resdethead" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Sample</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">PaymentMethodCode</td>
+                                <td>string</td>
+                                <td>Code assigned to the payment method</td>
+                                <td>WLKN</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">PaymentMethodName</td>
+                                <td>string</td>
+                                <td>Name assigned to the payment method</td>
+                                <td>Walk-in</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header bg-danger" id="stathead">
+            <h5 class="mb-0">
+                <button class="btn btn-link text-white" data-toggle="collapse" data-target="#staterror" aria-expanded="true" aria-controls="staterror">
+            Status and Error Codes
+            </button>
+            </h5>
+        </div>
+        <div id="staterror" class="collapse" aria-labelledby="stathead" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Resolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">500</td>
+                                <td>Internal Server Error</td>
+                                <td>Verify that you are using the correct Client Key and Secret Key</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">401</td>
+                                <td>Unauthorized</td>
+                                <td>
+                                    Check if you're HTTP request header is passed correctly, could be:
+                                    <ul>
+                                        <li>Missing Client Key</li>
+                                        <li>Missing Secret Key</li>
+                                    </ul>
+                                </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/chkdeposit.js"></script>

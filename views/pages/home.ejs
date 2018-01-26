@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+    <main>
+        <div class="jumbotron">
+            <% if (!user) { %>
+                <h4 class="text-center">PayWalo Developer Hub</h4>
+                <br>
+                <p class="text-center">Welcome! Please <a href="/login">log in</a>.</p>
+                <% } else { %>
+                    <% include ../partials/header %>
+                        <div id="article" class="container-fluid">
+                            <h4 class="text-center">PayWalo Developer Hub</h4>
+                            <% } %>
+                        </div>
+                        <!--                        <div>-->
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+    <script src="js/paywalo.js"></script>
+</body>
+
+</html>
