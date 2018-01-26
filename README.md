@@ -4,6 +4,13 @@ This is the source for the PayWalo API documentation using ExpressJS and Node
 
 To install, clone the repository and install dependencies.
 
+1. Download repository
+2. Extract the contents to location
+3. Go inside where you extracted the files
+4. run npm install
+5. run node server.js
+6. browse to http://localhost:3000
+
 ```bash
 $ git clone git@github.com:passport/express-4.x-local-example.git
 $ cd express-4.x-local-example
